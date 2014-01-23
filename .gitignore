@@ -56,3 +56,4 @@ staticfiles
 
 #NODE
 **/node_modules
+**/package.json
