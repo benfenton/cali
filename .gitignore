@@ -55,5 +55,5 @@ venv
 staticfiles
 
 #NODE
-**/node_modules
-**/package.json
+node_modules
+package.json
