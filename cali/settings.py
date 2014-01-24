@@ -38,7 +38,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = (
-    'require',
+    #'require',
     'tastypie',
     'django.contrib.admin',
     'django.contrib.auth',
