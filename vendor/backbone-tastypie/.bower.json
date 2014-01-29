@@ -1,0 +1,13 @@
+{
+  "name": "backbone-tastypie",
+  "homepage": "https://github.com/PaulUithol/backbone-tastypie",
+  "_release": "47a9253f0f",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "47a9253f0f6e885a718789b60618e83eb207578b"
+  },
+  "_source": "git://github.com/PaulUithol/backbone-tastypie.git",
+  "_target": "*",
+  "_originalSource": "backbone-tastypie"
+}
