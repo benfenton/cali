@@ -1,3 +1,19 @@
-#main {
-  color: red;
+/* line 3, ../sass/index.scss */
+.meeting {
+  color: blue;
+  width: 300px;
+}
+
+/* line 9, ../sass/index.scss */
+.delete {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #666;
+  color: white;
+  background-color: blue;
+  padding: 2px;
+  float: right;
 }

@@ -11,16 +11,24 @@ module.exports = function(grunt) {
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
       ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
     // Task configuration.
-    clean: ["static/js/source.js"],
+    clean: ['static/js/source/*.js', 'static/css/*.css'],
+    compass: {
+      dist: {
+        options: {
+          sassDir: 'static/sass',
+          cssDir: 'static/css'
+        }
+      }
+    },
     requirejs: {
       compile: {
         options: {
-          mainConfigFile: "static/js/config.js",
+          mainConfigFile: 'static/js/config.js',
           generateSourceMaps: false,
-          include: ["main"],
+          include: ['main'],
           findNestedDependencies: true,
-          name: "almond",
-          out: "static/js/source/source.js",
+          name: 'almond',
+          out: 'static/js/source/source.js',
           wrap: true,
           preserveLicenseComments: false
         }
@@ -74,6 +82,10 @@ module.exports = function(grunt) {
       files: ['test/**/*.html']
     },
     watch: {
+      css: {
+        files: 'static/sass/*.scss',
+        tasks: ['compass']
+      },
       scripts: {
         files: ['static/js/*.js', 'static/js/modules/*.js'],
         tasks: ['default']
@@ -93,7 +105,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks("grunt-contrib-clean");
   grunt.loadNpmTasks('grunt-contrib-requirejs');
-  grunt.loadNpmTasks('grund-contrib-compass');
+  grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-sass');
 
   // Default task.

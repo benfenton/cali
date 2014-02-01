@@ -1,0 +1,16 @@
+@import "compass/css3";
+
+.meeting {
+  color: blue;
+  width: 300px;
+}
+
+
+.delete {
+  @include border-radius(5px);
+  border: 1px solid #666;
+  color: white;
+  background-color: blue;
+  padding: 2px;
+  float: right;
+}
