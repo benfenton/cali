@@ -1,19 +1,22 @@
-define(function(require, exports, module) {
-  "use strict";
+define(function( require, exports, module ) {
+  'use strict';
 
-  // External dependencies.
-  var Backbone = require("backbone_tastypie");
+  var Backbone = require( 'backbone_tastypie' );
+  var Appointments = require( 'modules/appointments' );
+  var AppointmentsView = require( 'modules/appointmentsview' );
 
-
-  // Defining the application router.
   module.exports = Backbone.Router.extend({
     routes: {
-      "": "index"
-
+      '': 'index'
     },
-
     index: function() {
-      console.log("Welcome to your / route.");
+      appointments = new Appointments();
+      appointments.fetch({
+        reset: true,
+        success: function() {
+          appointmentsView = new AppointmentsView( { collection: appointments } );
+        }
+      });
     }  
   });
 });

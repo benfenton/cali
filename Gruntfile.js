@@ -11,6 +11,7 @@ module.exports = function(grunt) {
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
       ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
     // Task configuration.
+    clean: ["static/js/source.js"],
     requirejs: {
       compile: {
         options: {
@@ -19,7 +20,7 @@ module.exports = function(grunt) {
           include: ["main"],
           findNestedDependencies: true,
           name: "almond",
-          out: "static/js/source.js",
+          out: "static/js/source/source.js",
           wrap: true,
           preserveLicenseComments: false
         }
@@ -73,9 +74,9 @@ module.exports = function(grunt) {
       files: ['test/**/*.html']
     },
     watch: {
-      gruntfile: {
-        files: '<%= jshint.gruntfile.src %>',
-        tasks: ['jshint:gruntfile']
+      scripts: {
+        files: ['static/js/*.js', 'static/js/modules/*.js'],
+        tasks: ['default']
       },
       lib_test: {
         files: '<%= jshint.lib_test.src %>',
@@ -89,10 +90,11 @@ module.exports = function(grunt) {
   //grunt.loadNpmTasks('grunt-contrib-uglify');
   //grunt.loadNpmTasks('grunt-contrib-qunit');
   //grunt.loadNpmTasks('grunt-contrib-jshint');
-  //grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks("grunt-contrib-clean");
   grunt.loadNpmTasks('grunt-contrib-requirejs');
 
   // Default task.
-  //grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
+  grunt.registerTask('default', ['clean', 'requirejs']);
 
 };
