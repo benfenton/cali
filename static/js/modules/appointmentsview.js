@@ -10,6 +10,7 @@ define(function( require, exports, module ) {
 
     initialize: function() {
       this.render();
+      this.collection.on('change', this.render, this);
     },
 
     render: function() {

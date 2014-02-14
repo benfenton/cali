@@ -109,6 +109,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
 
   // Default task.
-  grunt.registerTask('default', ['clean', 'requirejs']);
+  grunt.registerTask('default', ['clean', 'compass', 'requirejs']);
 
 };

@@ -4,6 +4,8 @@ require.config({
 
     "almond": "../../vendor/almond/almond",
 
+    "text": "../../vendor/requirejs-text/text",
+
     "underscore": "../../vendor/lodash/dist/lodash.underscore",
 
     "jquery": "../../vendor/jquery/jquery",

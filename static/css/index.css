@@ -1,19 +1,24 @@
 /* line 3, ../sass/index.scss */
-.meeting {
-  color: blue;
-  width: 300px;
+span {
+  margin: 0 0 0 25px;
 }
 
-/* line 9, ../sass/index.scss */
+/* line 6, ../sass/index.scss */
+.meeting {
+  color: blue;
+  width: 600px;
+}
+
+/* line 12, ../sass/index.scss */
 .delete {
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px;
   border: 1px solid #666;
   color: white;
   background-color: blue;
-  padding: 2px;
+  padding: 2px 5px;
   float: right;
 }
