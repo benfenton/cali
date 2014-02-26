@@ -20,6 +20,7 @@
 		_ = window._;
 		Backbone = window.Backbone;
 	}
+  
 
 	Backbone.Tastypie = {
 		doGetOnEmptyPostResponse: true,
@@ -28,7 +29,7 @@
 			username: '',
 			key: ''
 		},
-		csrfToken: ''
+		csrfToken: 'csrftoken'
 	};
 
 	/**

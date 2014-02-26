@@ -4,10 +4,14 @@ define(function( require, exports, module ) {
   var Backbone = require( 'backbone_tastypie' );
 
   module.exports = Backbone.Model.extend({ 
-    urlRoot: '/api/v1/appointment/:id',
-
+    attributeId: 'myModelId',
+    urlRoot: function() {
+      return '/api/v1/appointment';
+    },
     initialize: function() {
-      return d = new Date(this.get('created_at'));
-     }
+      defaults: { 
+        myModelId: null
+      }
+    }
   });  
 });

@@ -4,13 +4,13 @@ from appointments.models import Appointment
 
 
 class AppointmentAdmin(admin.ModelAdmin):
-    list_display = ('__unicode__', 'title', 'created_at', 'updated_at')
+    list_display = ('__unicode__', 'user', 'title', 'date', 'created_at', 'updated_at')
     list_filter = ('created_at', 'updated_at')
-    search_fields = ('title',)
+    search_fields = ('user', 'title', 'date')
 
     fieldsets = [
         ('Appointment', {
-            'fields': ('title',)
+            'fields': ('user', 'title', 'date')
           })
     ]
     readonly_fields = ('created_at', 'updated_at')

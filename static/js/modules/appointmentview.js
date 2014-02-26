@@ -6,13 +6,18 @@ define(function( require, exports, module ) {
   
   module.exports = Backbone.View.extend({
     tagName: 'li',
+    attributes: function() {
+      return {
+        id: this.model.get('date')
+      }
+    },
     className: 'meeting',
     template: _.template(Temp),
 
     initialize: function(){
-    this.container = $( '#' + d.toJSON() );
-    console.log(this.container);
-    this.model.on('destroy', this.unrender, this);
+      this.container = $( '#' + this.model.attributes.date );
+      console.log( this.container );
+      this.model.on('destroy', this.unrender, this);
     },
     events: {
       'click .delete': 'handleDelete'
@@ -30,5 +35,4 @@ define(function( require, exports, module ) {
       this.remove();
     }
   });
-
 });

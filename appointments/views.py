@@ -1,19 +1,17 @@
-from django.template import loader, Context
-from django.http import HttpResponse
-from django.shortcuts import render
+
+from django.shortcuts import render_to_response
+from django.core.context_processors import csrf
 from appointments.models import Appointment
 
 
 def index(request):
-    template = loader.get_template('index.html')
-    context = Context()
-    response = template.render(context)
-    return HttpResponse(response)
+    return render_to_response('appointments.html', {})
 
 
-
-
-
+def add(request):
+    c = {}
+    c.update(csrf(request))
+    return render_to_response('add.html', c)
 
 
 
