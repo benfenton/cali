@@ -48,7 +48,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'gunicorn',
     'tastypie',
-    #'require',
+    'debug_toolbar',
     'appointments',
 
 )
@@ -67,6 +67,15 @@ ROOT_URLCONF = 'cali.urls'
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
 )
+
+TEMPLATE_LOADERS = (
+    'cali.generic_templates.PystacheFilesystemLoader',
+    'cali.generic_templates.PystacheAppDirectoriesLoader',
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+)
+
+
 
 
 WSGI_APPLICATION = 'cali.wsgi.application'

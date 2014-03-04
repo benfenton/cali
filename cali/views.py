@@ -1,7 +1,10 @@
 from django.shortcuts import render_to_response
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import auth
 from django.core.context_processors import csrf
+from cali.json_utils import *
+import simplejson
+
 
 
 def login(request):
@@ -30,4 +33,14 @@ def invalid_login(request):
 def logout(request):
     auth.logout(request)
     return render_to_response('logout.html')
+
+def add(request):
+    c = {}
+    c.update(csrf(request))
+    return render_to_response('add.html', c)
+
+def appointments(request):
+    return render_to_response('appointments.mustache', {})
+
+
 

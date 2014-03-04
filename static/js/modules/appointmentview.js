@@ -1,38 +1,70 @@
-define(function( require, exports, module ) {
-  'use strict';
-
-  var Backbone = require( 'backbone_tastypie' );
-  var Temp = require('text!templates/templateView.html');
+define([
+  'jquery',
+  'underscore',
+  'backbone',
+  'marionette',
+  'vent',
+  'text',
+  'mustache',
+  'marionette_mustache',
+  'text!templates/appointments.mustache',
+  'modules/appointment',
+  'modules/appointmentmodules',
+],
+function($, _, Backbone, Marionette, vent, t, Mustache, MM, appointmentsViewTemplate,
+  Appointment, AppointmentModules) {
   
-  module.exports = Backbone.View.extend({
-    tagName: 'li',
-    attributes: function() {
-      return {
-        id: this.model.get('date')
-      }
-    },
-    className: 'meeting',
-    template: _.template(Temp),
+  var AppointmentView = Backbone.Marionette.ItemView.extend({
 
-    initialize: function(){
-      this.container = $( '#' + this.model.attributes.date );
-      console.log( this.container );
-      this.model.on('destroy', this.unrender, this);
+    template: appointmentsViewTemplate,
+    tagName: "li",
+
+    initialize: function() {
+      console.log('itemviewrender');
+      
+
+    },
+    //render: function() {
+//
+    //  console.log(this.model.toJSON());
+    //  console.log(appointmentsViewTemplate);
+    //  this.$el.html(this.template);
+    //  return this;
+    //}
+  });
+
+  var AppointmentsView = Marionette.CollectionView.extend({
+
+    itemView: AppointmentView,
+
+    initialize: function() { 
+    //this.collection.on('sync', this.render, this);
+      
+     
+      console.log("appointmentsview:init:"+JSON.stringify(this.collection));
+      
+      this.render();
+      
     },
     events: {
-      'click .delete': 'handleDelete'
+
     },
-    handleDelete: function() {
-      this.model.destroy();
-      return false;
+    onRender: function () {
+
     },
-    render: function() {  
-      this.$el.html( this.template( this.model.toJSON() ) );
-      this.container.append(this.$el);
-      return this;
+    render: function( item ) {
+      console.log('in the collection render');
+      this.collection.each(function( item ) {
+        this.renderAppointment( item );
+      }, this );
     },
-    unrender: function() {
-      this.remove();
+    
+    renderAppointment: function( item ) {
+      console.log('in the renderAppointment funtion');
+      var appointmentView = new AppointmentView( { model: item } );
+      this.$el.append( appointmentView.render().el );
     }
+    
   });
+  return AppointmentsView
 });

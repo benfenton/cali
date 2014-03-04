@@ -23,7 +23,7 @@ module.exports = function(grunt) {
     requirejs: {
       compile: {
         options: {
-          mainConfigFile: 'static/js/config.js',
+          mainConfigFile: 'static/js/main.js',
           generateSourceMaps: false,
           include: ['main'],
           findNestedDependencies: true,

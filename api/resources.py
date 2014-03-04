@@ -9,10 +9,8 @@ class UserResource(ModelResource):
     class Meta:
         queryset = User.objects.all()
         resource_name = 'user'
-        excludes = ['email', 'password', 'is_active', 'is_staff', 'is_superuser']
-        #filtering = {
-        #    'username': ALL,
-        #}
+       
+        
        
         
 class AppointmentResource(ModelResource):
@@ -21,25 +19,19 @@ class AppointmentResource(ModelResource):
     class Meta:
         queryset = Appointment.objects.all() 
         resource_name = 'appointment'
-        authentication = SessionAuthentication()
+        #authentication = SessionAuthentication()
         authorization = DjangoAuthorization()
-        #filtering = {
-        #    'user': ALL_WITH_RELATIONS,
-        #}
+        
+       
         
         
        
     def get_object_list(self, request): 
-        return super(AppointmentResource, self).get_object_list(request).filter(pk=request.user.pk)
-
-    def obj_create(self, request): 
-        return super(AppointmentResource, self).obj_create(request).filter(pk=request.user.pk)
-
-    #def obj_create(self, bundle, request=None, **kwargs):
-    #    return super(AppointmentResource, self).obj_create(bundle, request, user=request.user)
+        return super(AppointmentResource, self).get_object_list(request).filter(user=request.user)
 
     
-    
+    #def obj_create(self, request): 
+    #    return super(AppointmentResource, self).obj_create(request).filter(user=request.user)
           
         
 

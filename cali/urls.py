@@ -19,12 +19,7 @@ urlpatterns = patterns('',
     url(r'^logout/$', 'cali.views.logout'),
     url(r'^loggedin/$', 'cali.views.loggedin'),
     url(r'^invalid/$', 'cali.views.invalid_login'), 
-    url(r'^appointments/$', include('appointments.urls')),
-    url(r'^add/$', include('appointments.urls')),
-
-
-
-
-
-    
+    url(r'^appointments/$', 'cali.views.appointments'),
+    url(r'^create/$', include('appointments.urls')),
+    url(r'^appointments/create/$', include('appointments.urls')),
 )
