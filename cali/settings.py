@@ -48,7 +48,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'gunicorn',
     'tastypie',
-    'debug_toolbar',
+    #'debug_toolbar',
     'appointments',
 
 )
