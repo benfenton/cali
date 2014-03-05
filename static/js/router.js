@@ -5,7 +5,7 @@ define([
   'marionette',
   'text',
 ],
-function($, _, Backbone, Marionette, t, appointmentsView, addAppointmentView){
+function($, _, Backbone, Marionette, t){
 
   return Marionette.AppRouter.extend({
     appRoutes: {

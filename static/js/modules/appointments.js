@@ -9,7 +9,12 @@ function($, Backbone, Marionette, Appointment) {
 
   var Appointments = Backbone.Collection.extend({
     model: Appointment,
-    url: '/api/v1/appointment'
+    
+    url: '/api/v1/appointment/?format=json',
+
+    parse: function(response) {
+        return response.objects;
+    }
 
     //maybeFetch: function(options){
     //        alert("Appointments:maybeFetch");

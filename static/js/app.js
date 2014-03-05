@@ -5,11 +5,12 @@ define([
   'marionette',
   'vent',
   'text',
+  'modules/appointment',
   'modules/appointments',
-  'modules/appointmentview',
+  'modules/appointmentsview',
   'modules/addappointmentview',
 ],
-function($, _, Backbone, Marionette, vent, t, Appointments, appointmentView, addAppointmentView) {
+function($, _, Backbone, Marionette, vent, t, Appointment, Appointments, appointmentsView, addAppointmentView) {
   'use strict';
 
 
@@ -48,7 +49,9 @@ function($, _, Backbone, Marionette, vent, t, Appointments, appointmentView, add
       appointments.fetch({
         reset: true,
         success: function() {
-          app.mainContent.show(new appointmentView({ collection: appointments }));
+         // console.log(appointments.toJSON());
+
+          app.mainContent.show(new appointmentsView({ collection: appointments }));
         }
       });
     });

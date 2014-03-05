@@ -18,7 +18,7 @@
 #    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 #    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
 #    OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-#import simplejson
+import simplejson
 
 def getYyyymmdd(dt):
     return "%d%d%d"%(dt.year,dt.month,dt.day)

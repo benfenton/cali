@@ -5,7 +5,7 @@ from forms import AppointmentForm
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.context_processors import csrf
 from cali.json_utils import *
-#import simplejson
+import simplejson
 
 
 

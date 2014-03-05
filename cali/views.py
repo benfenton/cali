@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import auth
 from django.core.context_processors import csrf
 from cali.json_utils import *
-#import simplejson
+import simplejson
 
 
 
@@ -40,7 +40,7 @@ def add(request):
     return render_to_response('add.html', c)
 
 def appointments(request):
-    return render_to_response('appointments.mustache', {})
+    return render_to_response('appointments.html')
 
 
 
