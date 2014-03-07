@@ -50,6 +50,7 @@ INSTALLED_APPS = (
     'tastypie',
     #'debug_toolbar',
     'appointments',
+    'jstemplate',
 
 )
 

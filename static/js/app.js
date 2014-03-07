@@ -9,8 +9,11 @@ define([
   'modules/appointments',
   'modules/appointmentsview',
   'modules/addappointmentview',
+  'modules/loggedinview', 
+  'controller',
 ],
-function($, _, Backbone, Marionette, vent, t, Appointment, Appointments, appointmentsView, addAppointmentView) {
+function($, _, Backbone, Marionette, vent, t, Appointment, Appointments, 
+         appointmentsView, addAppointmentView, loggedinView, Controller) {
   'use strict';
 
 
@@ -24,36 +27,43 @@ function($, _, Backbone, Marionette, vent, t, Appointment, Appointments, appoint
 
   app.addInitializer(function() {
 
-    vent.on('show:appointments', function(x) {
+    vent.on("show:appointments", function() {
       console.log("show:appointments");
       Backbone.history.navigate("appointments");
-      app.mainContent.show(new appointmentsView());
+      //app.mainContent.show(new appointmentsView());
+      var appointments = new Appointments();
+      //app.mainContent.show(new appointmentsView({ collection: appointments }));
+      appointments.fetch({
+        reset: true,
+        success: function() {
+          app.mainContent.show(new appointmentsView({ collection: appointments }));
+        }
+      });
     });
 
-    vent.on('show:create', function(x) {
+    vent.on("show:create", function() {
       console.log("show:create");
       Backbone.history.navigate("create");
-      app.mainContent.show(new addAppointmentView());
+      var appointment = new Appointment();
+      app.mainContent.show(new addAppointmentView({ model: appointment }));
     });
 
-    app.vent.on("routing:started", function() {
-      alert("routing:started");
+    vent.on("show:loggedin", function() {
+      console.log("show:loggedin");
+      Backbone.history.navigate("");
+      app.mainContent.show(new loggedinView());
+    });
+
+    vent.on("routing:started", function() {
+      console.log("routing:started");
       console.log(Backbone.History.started);
       if( ! Backbone.History.started)
         Backbone.history.start({pushState: true});
       console.log(Backbone.History.started);
-      console.log("show:appointments");
-      Backbone.history.navigate("appointments");
-      appointments = new Appointments();
-      //app.mainContent.show(new appointmentView({ collection: appointments }));
-      appointments.fetch({
-        reset: true,
-        success: function() {
-         // console.log(appointments.toJSON());
+      console.log("hello you are loggedin");
+      Backbone.history.navigate("");
+      app.mainContent.show(new loggedinView());
 
-          app.mainContent.show(new appointmentsView({ collection: appointments }));
-        }
-      });
     });
 
   });

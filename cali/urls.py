@@ -14,6 +14,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^api/', include(v1_api.urls)),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', 'cali.views.index'),
     url(r'^login/$', 'cali.views.login'),
     url(r'^auth/$', 'cali.views.auth_view'),
     url(r'^logout/$', 'cali.views.logout'),

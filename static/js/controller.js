@@ -1,18 +1,25 @@
 define([
   'jquery',
+  'backbone',
   'marionette',
   'vent',
 ],
-function($, Marionette, vent) {
+function($, Backbone, Marionette, vent) {
 
-  return  {
-    showAppointments : function(param) {
-      console.log('controller:showAppointments');
-      vent.trigger("show:appointmets");
+  var Controller = {
+
+    showLoggedin: function(params) {
+      console.log('controller:showLoggedin');
+      vent.trigger("show:loggedin");
     },
-    showCreate: function(param) {
+    showAppointments : function(params) {
+      console.log('controller:showAppointments');
+      vent.trigger("show:appointments");
+    },
+    showCreate: function(params) {
       console.log('conntroller:showCreate');
       vent.trigger("show:create");
     }
   };
+ return Controller; 
 });

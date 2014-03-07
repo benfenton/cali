@@ -7,7 +7,7 @@ define([
   'text',
   'mustache',
   'marionette_mustache',
-  'text!templates/templateView.mustache',
+  'text!templates/templateview.mustache',
   'modules/appointment',
  // 'modules/appointmentmodules',
 ],
