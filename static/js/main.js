@@ -15,9 +15,9 @@ require.config({
     //backbonetastypie: "../../vendor/backbone-tastypie/backbone_tastypie/static/js/backbone-tastypie",
     handlebars: "../../vendor/handlebars/handlebars",
     //icanhaz: "../../vendor/ich/ICanHaz",
-    //tastypiefix: "../../vendor/tastypiefix/backbone.tastypiefix",
+    tastypiefix: "../../vendor/tastypiefix/backbone.tastypiefix",
     mustache: "../../vendor/mustache/mustache",
-    //syphon: "../../vendor/syphon/backbone.syphon",
+    syphon: "../../vendor/syphon/backbone.syphon",
     marionette: "../../vendor/marionette/lib/backbone.marionette",
     "backbone.wreqr": "../../vendor/marionette/lib/backbone.wreqr",
     "backbone.eventbinder": "../../vendor/marionette/lib/backbone.eventbinder",
@@ -31,7 +31,7 @@ require.config({
     },
    
     "backbone": {
-      deps: ["underscore", "jquery"],
+      deps: ["underscore", "jquery", "jqcook"],
       exports: "Backbone",
       //init: function (_, $) { Backbone.$ = $; return Backbone; }
     },
@@ -55,11 +55,11 @@ require.config({
 });
 
 require([
-  //'app', 'vent', 'backbone', 'tastypiefix', 'router', 'controller',
-  'app', 'vent', 'backbone', 'router', 'controller',
+  'app', 'vent', 'backbone', 'tastypiefix', 'router', 'controller',
+  //'app', 'vent', 'backbone', 'router', 'controller',
   //'app', 'vent', 'backbone', 'router', 'controller',
 ],
-function(app, vent, Backbone, Router, Controller) {
+function(app, vent, Backbone, btp, Router, Controller) {
     console.log("Test output");
     console.log("$: " + typeof $);
     console.log("_: " + typeof _);

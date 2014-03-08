@@ -46,20 +46,20 @@ def appointments(request):
     return render_to_response('appointments.html')
 
 def index(request):
-    if request.POST:
-        form = AppointmentForm(request.POST)
-        if form.is_valid():
-            form.save()
-
-            return HttpResponseRedirect('/')
-    else:
-        form = AppointmentForm()
-
-    args = {}
-    args.update(csrf(request))
-
-    args['form'] = form
-    return render_to_response('index.html', args)
+    #if request.POST:
+    #    form = AppointmentForm(request.POST)
+    #    if form.is_valid():
+    #        form.save()
+#
+    #        return HttpResponseRedirect('/')
+    #else:
+    #    form = AppointmentForm()
+#
+    #args = {}
+    #args.update(csrf(request))
+#
+    #args['form'] = form
+    return render_to_response('index.html')
 
 
 

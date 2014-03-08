@@ -20,8 +20,11 @@ function($, _, Backbone, Marionette, vent, t, Mustache, MM, Appointments, Appoin
 
 
     initialize: function() { 
+      //console.log(this.collection.attributes);
+      //console.log(this.collection.toJSON());
+      
        
-      this.collection.on('sync', this.render, this);
+      
       
      
       //console.log("appointmentsview:init:"+JSON.stringify(this.collection));

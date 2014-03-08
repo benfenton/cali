@@ -23,28 +23,42 @@ function($, _, Backbone, Marionette, app, vent,
   var addAppointmentView = Backbone.Marionette.ItemView.extend({
     //el: '#main',
     
-    template: addAppointmentViewTemplate
+    template: addAppointmentViewTemplate,
 
-  //initialize: function() {
+    initialize: function() {
+      
+      
 
+      //console.log(this.model.attributes);
+      //console.log(this.model.toJSON());
+   
   //  this.render();
-  //  this.title = $('#title');
+      this.title = $('#title');
+    
+    
+      
   //  this.date = $('#date');
-  //},
+      
+    },
   //
-  //events: {
-  //  'submit': 'addAppointment'
-  //},
+    events: {
+      'submit': 'addAppointment'
+    },
 
-  //addAppointment: function (e) {
-  //  e.preventDefault();
-  //  this.collection.create({
-  //    title: this.title.val(),
+    addAppointment: function (e) {
+      e.preventDefault();
+      this.collection.create({
+      title: this.title.val()
+      
+
+
+
+    
   //    date: this.date.val(),
-  //  }, { wait: true });
+      }, { wait: true });
 
-  //  this.clearForm();
-  //},
+      this.clearForm();
+    },
 
   //render: function() {
   //  var html = this.template();
@@ -52,10 +66,10 @@ function($, _, Backbone, Marionette, app, vent,
   //  return this;
   //},
 
-  //clearForm: function () {
-  //  this.title.val('');
+    clearForm: function () {
+      this.title.val('');
   //  this.date.val('');
-  //  }
+    }
   });
   return addAppointmentView;
 });

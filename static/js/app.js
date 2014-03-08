@@ -44,8 +44,8 @@ function($, _, Backbone, Marionette, vent, t, Appointment, Appointments,
     vent.on("show:create", function() {
       console.log("show:create");
       Backbone.history.navigate("create");
-      var appointment = new Appointment();
-      app.mainContent.show(new addAppointmentView({ model: appointment }));
+      var appointments = new Appointments();
+      app.mainContent.show(new addAppointmentView({ collection: appointments }));
     });
 
     vent.on("show:loggedin", function() {
