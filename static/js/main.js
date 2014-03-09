@@ -55,11 +55,11 @@ require.config({
 });
 
 require([
-  'app', 'vent', 'backbone', 'tastypiefix', 'router', 'controller',
+  'app', 'vent', 'backbone', 'router', 'controller',
   //'app', 'vent', 'backbone', 'router', 'controller',
   //'app', 'vent', 'backbone', 'router', 'controller',
 ],
-function(app, vent, Backbone, btp, Router, Controller) {
+function(app, vent, Backbone, Router, Controller) {
     console.log("Test output");
     console.log("$: " + typeof $);
     console.log("_: " + typeof _);

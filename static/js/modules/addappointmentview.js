@@ -15,60 +15,36 @@ define([
   'modules/appointment',
   'modules/appointments',
   'app',
- // 'modules/appointmentmodules',
 ],
-function($, _, Backbone, Marionette, app, vent, 
-  Router, Controller, t, Mustache, MM, addAppointmentViewTemplate, Appointment, Appointments, app) {
+function($, _, Backbone, Marionette, app, vent, Router, Controller, t, 
+         Mustache, MM, addAppointmentViewTemplate, Appointment, Appointments, app) {
 
   var addAppointmentView = Backbone.Marionette.ItemView.extend({
-    //el: '#main',
     
     template: addAppointmentViewTemplate,
 
-    initialize: function() {
-      
-      
-
-      //console.log(this.model.attributes);
-      //console.log(this.model.toJSON());
-   
-  //  this.render();
-      this.title = $('#title');
-    
-    
-      
-  //  this.date = $('#date');
-      
-    },
-  //
     events: {
-      'submit': 'addAppointment'
+      'submit': 'addAppointment',
+      'keypress #title': 'createOnEnter'
     },
-
-    addAppointment: function (e) {
+    createOnEnter: function(e) {
+      if((e.keyCode || e.which) == 13){
+        this.addAppointment();
+        e.preventDefault();
+      }
+    },
+    addAppointment: function(e) {
       e.preventDefault();
-      this.collection.create({
-      title: this.title.val()
-      
-
-
-
-    
-  //    date: this.date.val(),
-      }, { wait: true });
-
-      this.clearForm();
+      var title = this.$('#title').val()
+      if(title){
+        this.collection.create({
+          title: title
+        });
+        this.$('#message').val('');
+        vent.trigger('show:appointments');
+      }
     },
-
-  //render: function() {
-  //  var html = this.template();
-  //  this.$el.html(html); 
-  //  return this;
-  //},
-
-    clearForm: function () {
-      this.title.val('');
-  //  this.date.val('');
+    onRender: function() { 
     }
   });
   return addAppointmentView;

@@ -1,14 +1,15 @@
 
 from django.shortcuts import render_to_response
+from django.template import RequestContext
 from appointments.models import Appointment
 from forms import AppointmentForm
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.context_processors import csrf
 from cali.json_utils import *
 import simplejson
+from django.views.decorators.csrf import csrf_exempt
 
-
-
+@csrf_exempt
 def create(request):
     if request.POST:
         form = AppointmentForm(request.POST)
@@ -24,6 +25,7 @@ def create(request):
 
     args['form'] = form
 
-    return render_to_response('add_appointment.html', args)
-
+    return render_to_response('index.html', 
+                              args,
+                              context_instance=RequestContext(request))
 

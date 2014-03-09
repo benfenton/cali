@@ -1,4 +1,5 @@
 from django.shortcuts import render_to_response
+from django.template import RequestContext
 from appointments.models import Appointment
 from appointments.forms import AppointmentForm
 from django.http import HttpResponse, HttpResponseRedirect
@@ -7,7 +8,7 @@ from django.core.context_processors import csrf
 from cali.json_utils import *
 import pystache
 import simplejson
-
+from django.views.decorators.csrf import csrf_exempt
 
 
 def login(request):
@@ -37,29 +38,15 @@ def logout(request):
     auth.logout(request)
     return render_to_response('logout.html')
 
-#def add(request):
-#    c = {}
-#    c.update(csrf(request))
-#    return render_to_response('add.html', c)
-
 def appointments(request):
     return render_to_response('appointments.html')
 
+@csrf_exempt
 def index(request):
-    #if request.POST:
-    #    form = AppointmentForm(request.POST)
-    #    if form.is_valid():
-    #        form.save()
-#
-    #        return HttpResponseRedirect('/')
-    #else:
-    #    form = AppointmentForm()
-#
-    #args = {}
-    #args.update(csrf(request))
-#
-    #args['form'] = form
-    return render_to_response('index.html')
+
+    return render_to_response('index.html',
+                              {},
+                              context_instance=RequestContext(request))
 
 
 

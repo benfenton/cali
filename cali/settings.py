@@ -37,7 +37,7 @@ ALLOWED_HOSTS = ['*']
 
 #url settings
 TASTYPIE_ALLOW_MISSING_SLASH = True
-#APPEND_SLASH=False
+#APPEND_SLASH = False
 
 
 # Application definition

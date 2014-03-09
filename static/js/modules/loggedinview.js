@@ -11,12 +11,10 @@ define([
   'mustache',
   'marionette_mustache',
   'text!templates/loggedinView.mustache',
-  //'modules/appointment',
   'app',
- // 'modules/appointmentmodules',
 ],
 function($, _, Backbone, Marionette, app, vent, 
-  Router, Controller, t, Mustache, MM, loggedinViewTemplate, app) {
+         Router, Controller, t, Mustache, MM, loggedinViewTemplate, app) {
   
     var loggedinView = Backbone.Marionette.ItemView.extend({
       
