@@ -35,12 +35,15 @@ function($, _, Backbone, Marionette, app, vent, Router, Controller, t,
     },
     addAppointment: function(e) {
       e.preventDefault();
-      var title = this.$('#title').val()
+      var title = this.$('#title').val();
+      var starttime = this.$('#starttime').val();
       if(title){
         this.collection.create({
-          title: title
+          title: title,
+          starttime: starttime
         });
-        this.$('#message').val('');
+        this.$('#time').val('');
+        this.$('#starttime').val('');
         vent.trigger('show:appointments');
       }
     },

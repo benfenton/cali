@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 class Appointment(models.Model):
     user = models.ForeignKey(User)
     title = models.CharField(max_length=200)
+    starttime = models.DateTimeField()
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)
 
