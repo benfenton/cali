@@ -1,8 +1,20 @@
 @import "compass/css3";
 
-span {
-  margin: 0 0 0 25px
+$font-stack: Helvetica, sans-serif;
+
+$primary-color: #666;
+
+
+body {
+  font: 100% $font-stack;
+
+  color: $primary-color;
 }
+
+li {
+  list-style: none;
+}
+
 .meeting {
   color: blue;
   width: 600px;

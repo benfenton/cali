@@ -1,15 +1,21 @@
-/* line 3, ../sass/index.scss */
-span {
-  margin: 0 0 0 25px;
+/* line 8, ../sass/index.scss */
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #666666;
 }
 
-/* line 6, ../sass/index.scss */
+/* line 14, ../sass/index.scss */
+li {
+  list-style: none;
+}
+
+/* line 18, ../sass/index.scss */
 .meeting {
   color: blue;
   width: 600px;
 }
 
-/* line 12, ../sass/index.scss */
+/* line 24, ../sass/index.scss */
 .delete {
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;

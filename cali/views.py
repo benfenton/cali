@@ -9,6 +9,8 @@ from cali.json_utils import *
 import pystache
 import simplejson
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import Group
 
 
 def login(request):
@@ -38,6 +40,25 @@ def logout(request):
     auth.logout(request)
     return render_to_response('logout.html')
 
+def register_user(request): 
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            user.groups.add(Group.objects.get(name='member'))   
+            return HttpResponseRedirect('/register_success')
+    
+    args = {}
+    args.update(csrf(request))
+
+    args['form'] = UserCreationForm()
+
+    return render_to_response('register.html', args)
+
+def register_success(request):
+    return render_to_response('register_success.html')
+
+
 def appointments(request):
     return render_to_response('appointments.html')
 
@@ -45,8 +66,8 @@ def appointments(request):
 def index(request):
 
     return render_to_response('index.html',
-                              {},
-                              context_instance=RequestContext(request))
+                             {'full_name': request.user.username},
+                             context_instance=RequestContext(request))
 
 
 

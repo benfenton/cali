@@ -16,46 +16,9 @@ function($, _, Backbone, Marionette, vent, t, Mustache, MM, Appointments, Appoin
   'use strict';
 
   var AppointmentsView = Marionette.CollectionView.extend({
-    itemView: AppointmentView,
-
-
-    initialize: function() { 
-      //console.log(this.collection.attributes);
-      //console.log(this.collection.toJSON());
-      
-       
-      
-      
-     
-      //console.log("appointmentsview:init:"+JSON.stringify(this.collection));
-      
-      //this.render();
-    }
+    tagName: 'ul',
+    
+    itemView: AppointmentView
   });
-  
-  //var AppointmentsView = Backbone.View.extend({
-  //  el: '#mainContent',
-//
-  //  initialize: function() {
-  //    console.log('inside the collection view init');
-  //  
-  //    this.render();
-  //    //console.log(JSON.stringify(this.collection));
-  //    this.collection.on('change', this.render, this);
-  //  },
-//
-  //  render: function() {
-  //    console.log('inside the collection render');
-  //    this.collection.each(function( item ) {
-  //      this.renderAppointment( item );
-  //    }, this );
-  //  },
-//
-  //  renderAppointment: function( item ) {
-  //    console.log('inside the collection renderApp');
-  //    var appointmentView = new AppointmentView( { model: item } );
-  //    this.el.append(appointmentView);
-  //  }
-  //});
   return AppointmentsView;
 });

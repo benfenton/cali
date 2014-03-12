@@ -56,6 +56,7 @@ INSTALLED_APPS = (
     'appointments',
     'jstemplate',
     'south',
+    'floppyforms',
 
 )
 

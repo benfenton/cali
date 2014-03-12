@@ -22,6 +22,7 @@ function($, _, Backbone, Marionette, vent, t, Appointment, Appointments,
   
 
   app.addRegions({
+    mainNav: '#mainNav',
     mainContent: '#mainContent'
   });
 
@@ -29,7 +30,7 @@ function($, _, Backbone, Marionette, vent, t, Appointment, Appointments,
 
     vent.on("show:appointments", function() {
       console.log("show:appointments");
-      Backbone.history.navigate("appointments");
+      Backbone.history.navigate("");
       //app.mainContent.show(new appointmentsView());
       var appointments = new Appointments();
       //app.mainContent.show(new appointmentsView({ collection: appointments }));
@@ -51,19 +52,20 @@ function($, _, Backbone, Marionette, vent, t, Appointment, Appointments,
     vent.on("show:loggedin", function() {
       console.log("show:loggedin");
       Backbone.history.navigate("");
-      app.mainContent.show(new loggedinView());
+      app.mainNav.show(new loggedinView());
     });
 
     vent.on("routing:started", function() {
       console.log("routing:started");
       console.log(Backbone.History.started);
       if( ! Backbone.History.started)
-        Backbone.history.start({pushState: true});
+        Backbone.history.start({ pushState: true });
       console.log(Backbone.History.started);
       console.log("hello you are loggedin");
       Backbone.history.navigate("");
-      app.mainContent.show(new loggedinView());
-
+      vent.trigger("show:loggedin");
+      vent.trigger("show:appointments");
+      
     });
 
   });
