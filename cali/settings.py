@@ -40,6 +40,11 @@ TASTYPIE_ALLOW_MISSING_SLASH = True
 #APPEND_SLASH = False
 
 
+#tastypie date formatting
+#TASTYPIE_DATETIME_FORMATTING = 'iso-8601'
+TASTYPIE_DEFAULT_FORMATS = ['json']
+
+
 # Application definition
 
 INSTALLED_APPS = (
@@ -52,10 +57,11 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'gunicorn',
     'tastypie',
+    #'backbone-tastypie',
     #'debug_toolbar',
-    'appointments',
+    'events',
     'jstemplate',
-    'south',
+    #'south',
     'floppyforms',
 
 )

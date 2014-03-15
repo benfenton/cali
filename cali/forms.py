@@ -1,7 +1,7 @@
 from django import forms
-from appointments.models import Appointment
+from events.models import Event
 
-class AppointmentForm(forms.ModelForm):
+class UserForm(forms.ModelForm):
 
     class Meta: 
-        model = Appointment
+        model = Event

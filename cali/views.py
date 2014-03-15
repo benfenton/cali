@@ -1,7 +1,7 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from appointments.models import Appointment
-from appointments.forms import AppointmentForm
+from events.models import Event
+from events.forms import EventForm
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import auth
 from django.core.context_processors import csrf
@@ -59,8 +59,8 @@ def register_success(request):
     return render_to_response('register_success.html')
 
 
-def appointments(request):
-    return render_to_response('appointments.html')
+def events(request):
+    return render_to_response('events.html')
 
 @csrf_exempt
 def index(request):

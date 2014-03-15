@@ -2,17 +2,22 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'marionette',
-  'controller',
-  'text',
-  'vent',
+  'modules/events',
+  'modules/eventsview',
 ],
-function($, _, Backbone, Marionette, Controller, t, vent){
-
-  var Router = Backbone.Marionette.AppRouter.extend({
-    appRoutes: {
-      '':'showAppointments',
+function($, _, Backbone, Events, EventsView){
+  var Router = Backbone.Router.extend({
+    routes: {
+      '':'showCalendar',
       'create':'showCreate'
+    },
+    showCalendar: function() {
+      console.log('showCalendar Function');
+      var events = new Events();
+      new EventsView({ collection: events }).render();
+      events.fetch({ reset: true });
+    },
+    showCreate: function() {
     }
   });
   return Router;

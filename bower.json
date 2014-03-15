@@ -13,6 +13,7 @@
     "mocha": "~1.13.0",
     "chai": "~1.8.0",
     "sinon": "~1.7.3",
-    "marionette": "~1.6.3"
+    "marionette": "~1.6.3",
+    "jquery-ui-amd": "~0.0.3"
   }
 }

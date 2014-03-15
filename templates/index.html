@@ -4,19 +4,41 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="csrf" content="{{ csrf_token }}">
   <title>CAL_i</title>
+  <link rel="stylesheet" href="../static/fullcalendarcss/jquery-ui.min.css">
+  <link rel="stylesheet" href="../static/fullcalendarcss/fullcalendar.css">
   <link rel="stylesheet" href="../static/css/index.css">
+   <script data-main="../static/js/main" 
+                src="/static/js/source/source.js"></script> 
+  <script type="text/javascript" src="../static/jquery-ui-1.9.2/ui/minified/jquery-ui.min.js"></script> 
 </head>
 <body>
   {% if user.is_authenticated %}
-    <h2>Thanks for logging in {{ full_name }}!</h2>
-    <nav id="mainNav"></nav>
-    <section id="mainContent"></section> 
+    <h2>Thanks for logging in, {{ full_name }}.</h2>
+    <h3>Click + Drag to create an event!
+    <div id="calendar"></div>
+    <div id="eventDialog" class="dialog ui-helper-hidden">
+      <form>
+        <div>
+          <label>Title:</label>
+          <input id="title" class="field" type="text"></input>
+        </div><!--
+        <div>
+          <label>Start Time:</label>
+          <input id="start" class="field" type="datetime-local"></input>
+        </div>
+        <div>
+          <label>End Time:</label>
+          <input id="start" class="field" type="datetime-local"></input>
+        </div> -->
+        <div>
+          <label>Color(Red, Green, Etc.):</label>
+          <input id="color" class="field" type="text"></input>
+        </div>
+      </form>
+    </div>
   {% else %}
     <h2>Please <a href="/login/">log</a> in.</h2>
   {% endif %}
-  <script data-main="../static/js/main" 
-                src="/static/js/source/source.js"></script> 
 </body>
 </html> 

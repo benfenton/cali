@@ -1,11 +1,11 @@
 from django.conf.urls import patterns, include, url
 
 from tastypie.api import Api
-from api.resources import AppointmentResource
+from api.resources import EventResource
 from api.resources import UserResource
 
 v1_api = Api(api_name='v1')
-v1_api.register(AppointmentResource())
+v1_api.register(EventResource())
 v1_api.register(UserResource())
 
 from django.contrib import admin
@@ -20,9 +20,9 @@ urlpatterns = patterns('',
     url(r'^logout/$', 'cali.views.logout'),
     url(r'^loggedin/$', 'cali.views.loggedin'),
     url(r'^invalid/$', 'cali.views.invalid_login'), 
-    url(r'^appointments/$', 'cali.views.appointments'),
+    url(r'^events/$', 'cali.views.events'),
     url(r'^register/$', 'cali.views.register_user'),
     url(r'^register_success/$', 'cali.views.register_success'),
-    url(r'^create/$', include('appointments.urls')),
-    url(r'^appointments/create/$', include('appointments.urls')),
+    url(r'^create/$', include('events.urls')),
+    url(r'^events/create/$', include('events.urls')),
 )
