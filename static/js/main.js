@@ -69,11 +69,11 @@ require.config({
 });
 
 require([
-  'vent', 'backbone', 'router', 'fullcalendar', //'jqueryui',
+  'backbone', 'router', 'fullcalendar', //'jqueryui',
   //'app', 'vent', 'backbone', 'router', 'controller',
   //'app', 'vent', 'backbone', 'router', 'controller',
 ],
-function(vent, Backbone, Router, FullCalendar) {
+function(Backbone, Router, FullCalendar) {
   
   //console.log("jquery ui: " + typeof jqui);
 

@@ -3,15 +3,14 @@ define([
   'underscore',
   'backbone',
   'text',
-  'modules/event',
-  'modules/events',
+
   'modules/eventsview',
 ],
-function($, _, Backbone, t, Event, Events, EventsView){
+function($, _, Backbone, t, EventsView){
   var EventView = Backbone.View.extend({
     el: '#eventDialog',
     initialize: function() {
-      _.bindAll(this);
+      _.bindAll(this); 
     },
     render: function() {
       this.$el.dialog({
