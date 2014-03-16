@@ -7,10 +7,10 @@ define([
 function($, _, Backbone, Event){
   var Events = Backbone.Collection.extend({
     model: Event,
-    url: '/api/v1/event',
-    parse: function(response) {
-      return response.objects;
-    }
+    url: 'backbone:eventapp_event'//,
+    //parse: function(response) {
+    //  return response.objects;
+    //}
   });
   return Events;
 });

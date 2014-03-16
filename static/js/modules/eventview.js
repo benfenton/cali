@@ -34,8 +34,7 @@ function($, _, Backbone, EventsView){
 
       if(this.model.isNew()) {
         this.collection.create(this.model, { success:  this.close() });
-        //this.collection.fetch({remove: false}); 
-
+        
       } else {
         this.model.save({}, { success: this.close });
       }

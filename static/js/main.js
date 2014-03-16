@@ -21,7 +21,7 @@ require.config({
     //mustache: "../../vendor/mustache/mustache",
     //syphon: "../../vendor/syphon/backbone.syphon",
     //marionette: "../../vendor/marionette/lib/backbone.marionette",
-    backbonewreqr: "../../vendor/marionette/lib/backbone.wreqr",
+    //backbonewreqr: "../../vendor/marionette/lib/backbone.wreqr",
     //backbone.eventbinder: "../../vendor/marionette/lib/backbone.eventbinder",
     //backbone.babysitter: "../../vendor/marionette/lib/backbone.babysitter",
     fullcalendar: "../../vendor/fullcalendar/fullcalendar.min"
@@ -47,7 +47,7 @@ require.config({
     "fullcalendar": {
       deps: ["jquery"],
       exports: "fullcalendar"
-    }//,
+    },
 
     //"jqueryui": {
      // deps: ["jquery"],
@@ -58,11 +58,11 @@ require.config({
     //"tastypiefix": {
     //  deps: ["backbone"],
     //  exports: "tastypiefix"
-    //},
+    //}
     
    //"backbonetastypie": {
    //deps: ["backbone", "underscore", "jquery"],
-   //attach: "Backbone"
+   ///attach: "Backbone"
    //}
 
   }

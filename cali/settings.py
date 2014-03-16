@@ -36,13 +36,13 @@ ALLOWED_HOSTS = ['*']
 
 
 #url settings
-TASTYPIE_ALLOW_MISSING_SLASH = True
+#TASTYPIE_ALLOW_MISSING_SLASH = True
 #APPEND_SLASH = False
 
 
 #tastypie date formatting
 #TASTYPIE_DATETIME_FORMATTING = 'iso-8601'
-TASTYPIE_DEFAULT_FORMATS = ['json']
+#TASTYPIE_DEFAULT_FORMATS = ['json']
 
 
 # Application definition
@@ -56,13 +56,14 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'gunicorn',
-    'tastypie',
+    #'tastypie',
     #'backbone-tastypie',
     #'debug_toolbar',
     'events',
     'jstemplate',
-    #'south',
+    'south',
     'floppyforms',
+    'backbone',
 
 )
 
