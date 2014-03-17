@@ -14,8 +14,9 @@ function($, _, Backbone, Events, EventsView){
     showCalendar: function() {
       console.log('showCalendar Function');
       var events = new Events();
-      new EventsView({ collection: events }).render();
       events.fetch({ reset: true });
+      new EventsView({ collection: events }).render();
+
     },
     showCreate: function() {
     }

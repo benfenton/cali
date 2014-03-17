@@ -5,8 +5,6 @@ from events.forms import EventForm
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import auth
 from django.core.context_processors import csrf
-from cali.json_utils import *
-import pystache
 import simplejson
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.forms import UserCreationForm
@@ -45,7 +43,7 @@ def register_user(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            user.groups.add(Group.objects.get(name='member'))   
+            user.groups.add(Group.objects.get(name='members'))   
             return HttpResponseRedirect('/register_success')
     
     args = {}

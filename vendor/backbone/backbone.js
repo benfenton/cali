@@ -1600,9 +1600,14 @@
     options.error = function(resp) {
       if (error) error(model, resp, options);
       model.trigger('error', model, resp, options);
-    };
+  };
+    
   };
 
+  
   return Backbone;
 
 }));
+
+
+

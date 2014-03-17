@@ -8,7 +8,6 @@ from tastypie.resources import ModelResource, ALL, ALL_WITH_RELATIONS
 from events.models import Event
 
 
-
 class UserResource(ModelResource):
     class Meta:
         queryset = User.objects.all()
@@ -17,8 +16,6 @@ class UserResource(ModelResource):
         excludes = ['email', 'password']
         #authentication = SessionAuthentication()
         authorization = DjangoAuthorization()
-       
-        
        
         
 class EventResource(ModelResource):
@@ -34,10 +31,11 @@ class EventResource(ModelResource):
         #authentication = SessionAuthentication()
         authorization = DjangoAuthorization()
         #serializer = Serializer(formats=['json'])
-        #always_return_data = True
+        always_return_data = True
         filtering = {
             'slug': ALL,
             'user': ALL_WITH_RELATIONS,
+            'id': ALL,
             'start': ALL,
             'end': ALL,
             'created': ['exact', 'range', 'gt', 'gte', 'lt', 'lte'],
@@ -56,6 +54,10 @@ class EventResource(ModelResource):
     def hydrate_user(self, bundle):
         bundle.obj.user = bundle.request.user
         return bundle
+
+    
+
+
         
 
 

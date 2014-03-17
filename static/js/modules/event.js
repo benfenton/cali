@@ -5,7 +5,7 @@ define([
 ],
 function($, _, Backbone){
   var Event = Backbone.Model.extend({
-    urlRoot: 'backbone:eventapp_event'
+    urlRoot: "/api/v1/event"
   });
   return Event;
 });

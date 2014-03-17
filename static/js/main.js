@@ -11,7 +11,7 @@ require.config({
     //jqueryui: "../../vendor/jquery-ui-amd/jquery-ui-1.10.0/ui/jquery-ui",
     //jqueryui: "../../vendor/jquery-ui-1.9.2/ui/jquery-ui",
     //jqcook: "../../vendor/jquery/jquery.cookie",
-    underscore: "../../vendor/lodash/dist/lodash.underscore",
+    underscore: "../../vendor/underscore/underscore",
 
     backbone: "../../vendor/backbone/backbone",
     //backbonetastypie: "../../vendor/backbone-tastypie/backbone_tastypie/static/js/backbone-tastypie",
@@ -36,7 +36,7 @@ require.config({
     "backbone": {
       deps: ["underscore", "jquery"],
       exports: "Backbone",
-      //init: function (_, $) { Backbone.$ = $; return Backbone; }
+    //  //init: function (_, $) { Backbone.$ = $; return Backbone; }
     },
 
    //"marionette": {
@@ -47,7 +47,7 @@ require.config({
     "fullcalendar": {
       deps: ["jquery"],
       exports: "fullcalendar"
-    },
+    }//,
 
     //"jqueryui": {
      // deps: ["jquery"],
@@ -62,21 +62,21 @@ require.config({
     
    //"backbonetastypie": {
    //deps: ["backbone", "underscore", "jquery"],
-   ///attach: "Backbone"
+   //attach: "Backbone"
    //}
 
   }
 });
 
 require([
-  'backbone', 'router', 'fullcalendar', //'jqueryui',
+  'backbone', 'router', 'fullcalendar', 
   //'app', 'vent', 'backbone', 'router', 'controller',
   //'app', 'vent', 'backbone', 'router', 'controller',
 ],
 function(Backbone, Router, FullCalendar) {
   
   //console.log("jquery ui: " + typeof jqui);
-
+  //Backbone.emulateHTTP = true;
   new Router();
   console.log(Backbone.History.started);
   if( ! Backbone.History.started)

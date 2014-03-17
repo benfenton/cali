@@ -36,13 +36,13 @@ ALLOWED_HOSTS = ['*']
 
 
 #url settings
-#TASTYPIE_ALLOW_MISSING_SLASH = True
+TASTYPIE_ALLOW_MISSING_SLASH = True
 #APPEND_SLASH = False
 
 
 #tastypie date formatting
 #TASTYPIE_DATETIME_FORMATTING = 'iso-8601'
-#TASTYPIE_DEFAULT_FORMATS = ['json']
+TASTYPIE_DEFAULT_FORMATS = ['json']
 
 
 # Application definition
@@ -56,15 +56,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'gunicorn',
-    #'tastypie',
-    #'backbone-tastypie',
-    #'debug_toolbar',
+    'tastypie',
     'events',
-    'jstemplate',
-    'south',
-    'floppyforms',
-    'backbone',
-
 )
 
 MIDDLEWARE_CLASSES = (
@@ -83,8 +76,6 @@ TEMPLATE_DIRS = (
 )
 
 TEMPLATE_LOADERS = (
-    'cali.generic_templates.PystacheFilesystemLoader',
-    'cali.generic_templates.PystacheAppDirectoriesLoader',
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
 )

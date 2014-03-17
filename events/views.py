@@ -5,7 +5,6 @@ from events.models import Event
 from forms import EventForm
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.context_processors import csrf
-from cali.json_utils import *
 import simplejson
 from django.views.decorators.csrf import csrf_exempt
 
