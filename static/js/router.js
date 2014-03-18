@@ -16,7 +16,6 @@ function($, _, Backbone, Events, EventsView){
       var events = new Events();
       events.fetch({ reset: true });
       new EventsView({ collection: events }).render();
-
     },
     showCreate: function() {
     }
