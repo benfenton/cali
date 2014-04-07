@@ -8,9 +8,9 @@
   <link rel="stylesheet" href="../static/jquery-ui-1.10.4/css/smoothness/jquery-ui-1.10.4.custom.min.css">
   <link rel="stylesheet" href="../static/fullcalendarcss/fullcalendar.css">
   <link rel="stylesheet" href="../static/css/index.css">
-   <script data-main="../static/js/main" 
-                src="/static/js/source/source.js"></script> 
-  <script type="text/javascript" src="../static/jquery-ui-1.10.4/js/jquery-ui-1.10.4.custom.min.js"></script> 
+   <script data-main="../static/js/main"
+                 src="/static/js/source/source.js"></script> 
+  <script src="../static/jquery-ui-1.10.4/js/jquery-ui-1.10.4.custom.min.js"></script> 
 </head>
 <body>
   {% if user.is_authenticated %}
@@ -33,6 +33,5 @@
   {% else %}
     <h2>Please <a href="/login/">log</a> in.</h2>
   {% endif %}
-  
 </body>
 </html> 
