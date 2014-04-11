@@ -1,12 +1,11 @@
 
+from django.http import HttpResponse, HttpResponseRedirect
+from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from events.models import Event
 from forms import EventForm
-from django.http import HttpResponse, HttpResponseRedirect
-from django.core.context_processors import csrf
 import simplejson
-from django.views.decorators.csrf import csrf_exempt
 
 @csrf_exempt
 def create(request):
@@ -14,11 +13,10 @@ def create(request):
         form = EventForm(request.POST)
         if form.is_valid():
             form.save()
-
             return HttpResponseRedirect('/events')
     else:
         form = EventForm()
-
+        
     args = {}
     args.update(csrf(request))
 

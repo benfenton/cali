@@ -1,9 +1,7 @@
-import datetime
+from django.contrib.auth.models import User 
 from urlparse import urlparse
 from django.db import models
-from django.contrib.auth.models import User 
-
-
+import datetime
 
 class Event(models.Model):
     user = models.ForeignKey(User)

@@ -1,15 +1,14 @@
-from django.shortcuts import render_to_response
-from django.template import RequestContext
-from events.models import Event
-from events.forms import EventForm
 from django.http import HttpResponse, HttpResponseRedirect
-from django.contrib import auth
-from django.core.context_processors import csrf
-import simplejson
-from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.forms import UserCreationForm
+from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import render_to_response
+from django.core.context_processors import csrf
 from django.contrib.auth.models import Group
-
+from django.template import RequestContext
+from events.forms import EventForm
+from events.models import Event
+from django.contrib import auth
+import simplejson
 
 def login(request):
     c = {}
