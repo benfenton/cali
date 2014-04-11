@@ -4,7 +4,6 @@
     "almond": "~0.2.6",
     "lodash": "~2.2.0",
     "backbone": "~1.1.0",
-    "backbone-tastypie": null,
     "jquery": "~2.0.3",
     "requirejs": "~2.1.8",
     "requirejs-text": "~2.0.10",
@@ -13,7 +12,6 @@
     "mocha": "~1.13.0",
     "chai": "~1.8.0",
     "sinon": "~1.7.3",
-    "marionette": "~1.6.3",
     "jquery-ui-amd": "~0.0.3"
   }
 }
