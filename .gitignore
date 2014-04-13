@@ -59,4 +59,7 @@ node_modules
 package.json
 
 #Mac
-.DS_Store
+.DS_Store 
+
+#Sass
+.sass-cache
