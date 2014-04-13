@@ -57,9 +57,12 @@ staticfiles
 #NODE
 node_modules
 package.json
+vendor
 
 #Mac
 .DS_Store 
 
 #Sass
 .sass-cache
+
+
