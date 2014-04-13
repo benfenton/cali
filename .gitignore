@@ -65,4 +65,7 @@ vendor
 #Sass
 .sass-cache
 
+#DB
+db.sqlite3
+
 
