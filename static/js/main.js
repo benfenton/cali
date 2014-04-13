@@ -4,6 +4,7 @@ require.config({
     almond: "../../vendor/almond/almond",
     text: "../../vendor/requirejs-text/text",
     jquery: "../../vendor/jquery/jquery",
+    jqueryui: "../../vendor/jquery-ui-amd/jquery-ui-1.10.0/ui/minified/jquery-ui.min",
     underscore: "../../vendor/underscore/underscore",
     backbone: "../../vendor/backbone/backbone",
     fullcalendar: "../../vendor/fullcalendar/fullcalendar.min"
@@ -19,7 +20,7 @@ require.config({
     //  //init: function (_, $) { Backbone.$ = $; return Backbone; }
     },
     "fullcalendar": {
-      deps: ["jquery"],
+      deps: ["jquery", "jqueryui"],
       exports: "fullcalendar"
     }
   }
