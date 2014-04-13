@@ -1,0 +1,30 @@
+/* line 8, ../../sass/main.scss */
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #666666;
+}
+
+/* line 14, ../../sass/main.scss */
+li {
+  list-style: none;
+}
+
+/* line 18, ../../sass/main.scss */
+.meeting {
+  color: blue;
+  width: 600px;
+}
+
+/* line 24, ../../sass/main.scss */
+.delete {
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px;
+  border: 1px solid #666;
+  color: white;
+  background-color: blue;
+  padding: 2px 5px;
+  float: right;
+}

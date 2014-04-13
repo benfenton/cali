@@ -1,0 +1,31 @@
+@import "compass/css3";
+
+$font-stack: Helvetica, sans-serif;
+
+$primary-color: #666;
+
+
+body {
+  font: 100% $font-stack;
+
+  color: $primary-color;
+}
+
+li {
+  list-style: none;
+}
+
+.meeting {
+  color: blue;
+  width: 600px;
+}
+
+
+.delete {
+  @include border-radius(15px);
+  border: 1px solid #666;
+  color: white;
+  background-color: blue;
+  padding: 2px 5px;
+  float: right;
+}

@@ -11,11 +11,11 @@ module.exports = function(grunt) {
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
       ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
     // Task configuration.
-    clean: ['static/js/source/*.js', 'static/css/*.css'],
+    clean: ['static/js/source/source.js', 'static/css/main.css'],
     compass: {
       dist: {
         options: {
-          sassDir: 'static/sass',
+          sassDir: 'sass',
           cssDir: 'static/css'
         }
       }
@@ -23,7 +23,7 @@ module.exports = function(grunt) {
     requirejs: {
       compile: {
         options: {
-          mainConfigFile: 'static/js/main.js',
+          mainConfigFile: 'js/main.js',
           generateSourceMaps: false,
           include: ['main'],
           findNestedDependencies: true,
@@ -83,11 +83,11 @@ module.exports = function(grunt) {
     },
     watch: {
       css: {
-        files: 'static/sass/*.scss',
+        files: 'sass/*.scss',
         tasks: ['compass']
       },
       scripts: {
-        files: ['static/js/*.js', 'static/js/modules/*.js', 'static/js/templates/*.html'],
+        files: ['js/*.js', 'js/modules/*.js'],
         tasks: ['default']
       },
       lib_test: {
