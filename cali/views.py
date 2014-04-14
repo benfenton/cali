@@ -27,7 +27,7 @@ def auth_view(request):
         return HttpResponseRedirect('/invalid')
 
 def loggedin(request):
-    return render_to_response('index.mustache',
+    return render_to_response('index.html',
                              {'full_name': request.user.username})
 
 def invalid_login(request):
@@ -35,7 +35,7 @@ def invalid_login(request):
 
 def logout(request):
     auth.logout(request)
-    return render_to_response('logout.html')
+    return render_to_response('index.html')
 
 def register_user(request): 
     if request.method == 'POST':

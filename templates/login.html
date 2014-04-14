@@ -1,19 +1,25 @@
-
 {% block content %}
-
-  {% if form.errors %}
-    <p class='error'> Sorry that's not a valid user name or password</p>
-  {% endif %}
-
-  <form action="/auth/" method="post">{% csrf_token %}
-    <label for="username">User name:</label>
-    <input type="text" name="username" value="" id="username">
-    <label for="password">Password:</label>
-    <input type="password" name="password" value="" id="password">
-
-    <input type="submit" value="login" />
-    
-  </form>
-  <p>If you don't have an account, please <a href="/register/">Register</a></p>
-
+    <div class="navbar-collapse collapse">
+      <form class="navbar-form navbar-right" role="form" 
+            action="/auth/" method="post">{% csrf_token %}
+        <div class="form-group">
+          <input type="text" placeholder="Username" class="form-control" 
+                 name="username" value="" id="username">
+        </div>
+        <div class="form-group">
+          <input type="password" placeholder="Password" class="form-control" 
+                 name="password" value="" id="password">
+        </div>
+        <button type="submit" class="btn btn-success">Sign in</button>
+      </form>
+    </div><!--/.navbar-collapse -->
+  </div>
+</div>
+<br />
+<br />
+<br />
+<div class="container">
+  <h2>Welcome to CALi, <br />a BackboneJS implementation of FullCalendar.</h2>
+  <h3>Please sign in, or <a href="/register/">register</a> if you don't already have an account!</h3>
+</div>
 {% endblock %}

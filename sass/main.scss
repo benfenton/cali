@@ -1,31 +1,57 @@
+@import "vendor/assets/stylesheets/bootstrap";
 @import "compass/css3";
 
 $font-stack: Helvetica, sans-serif;
-
-$primary-color: #666;
+$primary-color: grey;
 
 
 body {
   font: 100% $font-stack;
-
   color: $primary-color;
+
+}
+
+ul.register {
+  margin-left: 100px;
+  float: left;
 }
 
 li {
   list-style: none;
 }
 
-.meeting {
-  color: blue;
-  width: 600px;
+#login-form {
+  float: right;
 }
 
+.helptext {
+  display: block;
+  width: 50x;
+}
 
-.delete {
-  @include border-radius(15px);
-  border: 1px solid #666;
-  color: white;
-  background-color: blue;
-  padding: 2px 5px;
-  float: right;
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 50px;
+  background-color: #f5f5f5;
+}
+
+#footer p {
+  padding: 15px 0 0 0;
+}
+
+.navbar-brand {
+  color: white !important;
 }

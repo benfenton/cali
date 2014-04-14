@@ -1,13 +1,32 @@
 {% extends 'parent.html' %}
 
 {% block content %} 
-
+  <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/login/"><button class="btn btn-success">Login</button></a></li>
+    </ul>
+   </div><!--/.navbar-collapse -->
+  </div>
+</div>
+  <br />
+  <br />
+  <br />
+  <div class="container">
   <h2>Register</h2>
   <form action="/register/" method="post">{% csrf_token %}
-  
-  {{form}}
-
-  <input type="submit" value="Register" />
+  	<label for="id_username"><b>Username:</b></label>
+  	  {{form.username}}
+  	<span class="helptext">Must be 30 characters or fewer. <br />Letters, digits and @/./+/-/_ only.</span><br />
+  	<label for="id_password1"><b>Password:</b></label>
+  	  {{form.password1}}
+  	<br />
+  	<br />
+  	<span class="helptext">Please re-enter your pasword.</span>
+  	<label for="id_password2"><b>Password:</b></label>
+  	  {{form.password2}}
+    </br>
+    </br>
+    <input class="btn btn-primary" type="submit" value="Register" />
   </form>
-  
+</div>
 {% endblock %}

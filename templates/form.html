@@ -1,20 +1,34 @@
 {% block content %}
-   
-   <h2>Thanks for logging in, {{ full_name }}!</h2>
-    <p>Click <a href="/logout/">here </a>to logout</p>
-    <p>Click + Drag to create an event!</p>
-    <div id="calendar"></div>
-    <div id="eventDialog" class="dialog ui-helper-hidden">
-      <form>
-        <div>
-          <label>Title:</label>
-          <input id="title" class="field" type="text"></input>
-        </div>
-        <div>
-          <label>Color:</label>
-          <input id="color" class="field" type="text"></input>
-        </div>
-      </form>
-    </div>
-    
+   <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="/logout/"><button class="btn btn-danger">Logout</button></a></li>
+      </ul>
+   </div><!--/.navbar-collapse -->
+  </div>
+</div>
+<br />
+<br />
+<br />
+<div class="container">
+  <h2>Hello, {{ full_name }}!</h2>
+  <p>Click + drag to create, move and resize events.</p>
+  <div id="calendar"></div>
+  <div id="eventDialog" class="dialog ui-helper-hidden">
+    <form>
+      <div>
+        <label>Title:</label>
+        <input id="title" class="field" type="text"></input>
+      </div>
+      <div>
+        <label>Select Color:
+        <select name="myselect" id="color">
+        <option value="HotPink">Pink</option>
+        <option value="CornflowerBlue">Blue</option>
+        <option value="DarkMagenta">Purple</option>
+        <option value="Coral">Orange</option>
+        </select>
+      </div>
+    </form>
+  </div>
+</div><!--container-->
 {% endblock %}
